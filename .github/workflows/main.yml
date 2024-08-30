@@ -1,4 +1,4 @@
-dsname: Build Docker Image
+name: Build Docker Image
 
 # Trigger the workflow on push to main branch and on pull requests
 on:
