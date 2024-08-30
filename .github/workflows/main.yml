@@ -1,4 +1,4 @@
-name: Build Docker Image
+dsname: Build Docker Image
 
 # Trigger the workflow on push to main branch and on pull requests
 on:
@@ -30,4 +30,4 @@ jobs:
         context: ./src  # Set the context to the src directory where your Dockerfile is located
         file: ./src/dockerfile  # Specify the path to the Dockerfile
         push: true
-        tags: jhkwon91/weather-app:${{ github.sha::7 }}   # Replace with your Docker Hub username and desired image name
+        tags: jhkwon91/weather-app:${{ github.sha }}   # Replace with your Docker Hub username and desired image name
