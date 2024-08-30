@@ -32,17 +32,18 @@ jobs:
         context: ./src  # Set the context to the src directory where your Dockerfile is located
         file: ./src/dockerfile  # Specify the path to the Dockerfile
         push: true
-        tags: jhkwon91/weather-app:${{ github.sha }}   # Replace with your Docker Hub username and desired image name
+        tags: 
+          jhkwon91/weather-app:${{ github.sha }}  
+          jhkwon91/weather-app:latest  
+    # - name: Update Kubernetes Deployment YAML
+    #   run: |
+    #     sed -i 's|image: jhkwon91/weather-app:.*|image: jhkwon91/weather-app:${{ github.sha }}|' ./deployment/deployment.yaml
 
-    - name: Update Kubernetes Deployment YAML
-      run: |
-        sed -i 's|image: jhkwon91/weather-app:.*|image: jhkwon91/weather-app:${{ github.sha }}|' ./deployment/deployment.yaml
-
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --local user.email "action@github.com"
-        git add ./deployment/deployment.yaml
-        git commit -m "Update image tag to ${{ github.sha }}"
-        git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+    # - name: Commit and push changes
+    #   run: |
+    #     git config --global user.name "GitHub Actions"
+    #     git config --local user.email "action@github.com"
+    #     git add ./deployment/deployment.yaml
+    #     git commit -m "Update image tag to ${{ github.sha }}"
+    #     git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
     
