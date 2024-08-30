@@ -30,4 +30,4 @@ jobs:
         context: ./src  # Set the context to the src directory where your Dockerfile is located
         file: ./src/dockerfile  # Specify the path to the Dockerfile
         push: true
-        tags: jhkwon91/weather-app:latest  # Replace with your Docker Hub username and desired image name
+        tags: jhkwon91/weather-app:$(date +%Y%m%d%H%M%S)   # Replace with your Docker Hub username and desired image name
