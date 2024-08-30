@@ -33,8 +33,8 @@ jobs:
         file: ./src/dockerfile  # Specify the path to the Dockerfile
         push: true
         tags: 
-          jhkwon91/weather-app:${{ github.sha }}  
-          jhkwon91/weather-app:latest  
+          ${{ secrets.DOCKER_USERNAME }}/weather-app:${{ github.sha }} 
+          ${{ secrets.DOCKER_USERNAME }}/weather-app:latest
     # - name: Update Kubernetes Deployment YAML
     #   run: |
     #     sed -i 's|image: jhkwon91/weather-app:.*|image: jhkwon91/weather-app:${{ github.sha }}|' ./deployment/deployment.yaml
