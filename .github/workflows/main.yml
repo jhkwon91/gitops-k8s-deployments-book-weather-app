@@ -33,7 +33,7 @@ jobs:
         file: ./src/dockerfile  # Specify the path to the Dockerfile
         push: true
         tags: 
-          ${{ secrets.DOCKER_USERNAME }}/weather-app:${{ github.sha }} 
+          ${{ secrets.DOCKER_USERNAME }}/weather-app:1.0 
  
     # - name: Update Kubernetes Deployment YAML
     #   run: |
