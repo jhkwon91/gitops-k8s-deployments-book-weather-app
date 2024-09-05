@@ -4,8 +4,14 @@ name: Build Docker Image
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'src/**'
+      - '!deployment/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'src/**'
+      - '!deployment/**'
 
 jobs:
   build:
